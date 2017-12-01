@@ -8,11 +8,10 @@ source:
     sha256: c5ccfe99bd3db0604d077c968b39a42d61333a64d171fe84d7037d6c0dcc996d
     url: https://github.com/jarro2783/cxxopts/archive/v1.4.1.tar.gz
 build:
+    noarch: ''
+    noarch_python: false
     number: '0'
     string: '0'
-    skip: true  # [win and py<35]
-    features:   # [win]
-      - vc14    # [win]
 requirements:
     build:
         - cmake
