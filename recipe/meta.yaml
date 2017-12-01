@@ -19,7 +19,7 @@ requirements:
     run: []
 test:
     commands:
-        - if exist %LIBRARY_INC%\\cxxopts.hpp  else (exit 1)                                   # [win]
+        #- if exist %LIBRARY_INC%\\cxxopts.hpp  else (exit 1)                                   # [win]
         - if exist %LIBRARY_LIB%\\cmake\\cxxopts\\cxxopts-config.cmake else (exit 1)           # [win]
         - if exist %LIBRARY_LIB%\\cmake\\cxxopts\\cxxopts-config-version.cmake else (exit 1)   # [win]
         - test -f ${PREFIX}/include/cxxopts.hpp                                                # [unix]
