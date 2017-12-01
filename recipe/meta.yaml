@@ -19,12 +19,12 @@ requirements:
     run: []
 test:
     commands:
-        #- if exist %LIBRARY_INC%\\cxxopts.hpp  else (exit 1)                                   # [win]
-        - if exist %LIBRARY_LIB%\\cmake\\cxxopts\\cxxopts-config.cmake else (exit 1)           # [win]
-        - if exist %LIBRARY_LIB%\\cmake\\cxxopts\\cxxopts-config-version.cmake else (exit 1)   # [win]
-        - test -f ${PREFIX}/include/cxxopts.hpp                                                # [unix]
-        - test -f ${PREFIX}/lib/cmake/cxxopts/cxxopts-config.cmake                             # [unix]
-        - test -f ${PREFIX}/lib/cmake/cxxopts/cxxopts-config-version.cmake                     # [unix]
+        - if exist %LIBRARY_INC%\\cxxopts.hpp (exit 0) else (exit 1)                                    # [win]
+        - if exist %LIBRARY_LIB%\\cmake\\cxxopts\\cxxopts-config.cmake (exit 0) else (exit 1)           # [win]
+        - if exist %LIBRARY_LIB%\\cmake\\cxxopts\\cxxopts-config-version.cmake (exit 0) else (exit 1)   # [win]
+        - test -f ${PREFIX}/include/cxxopts.hpp                                                         # [unix]
+        - test -f ${PREFIX}/lib/cmake/cxxopts/cxxopts-config.cmake                                      # [unix]
+        - test -f ${PREFIX}/lib/cmake/cxxopts/cxxopts-config-version.cmake                              # [unix]
 about:
     description: This is a lightweight C++ option parser library, supporting the standard
         GNU style syntax for options.
