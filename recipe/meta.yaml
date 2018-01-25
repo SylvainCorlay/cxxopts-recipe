@@ -14,16 +14,19 @@ source:
         - 0001-Fixup-integer-pattern-multiple-definition.patch
   
 build:
+    features:
+        - vc14  # [win]
     noarch: ''
     noarch_python: false
-    number: '0'
-    string: '0'
+    number: 1
+    skip: true  # [win and py<35]
     
 requirements:
     build:
         - cmake
         - toolchain
-    run: []
+    run:
+        - vc 14  #[win]
 
 test:
     commands:
